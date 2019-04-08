@@ -97,7 +97,7 @@ app.get('/images', function (req, res) {
 app.get('/dates', function (req, res) {
   if (!req.query.search) {
     return res.send({
-      error: 'Tienes que dar un parametro de busqueda. Ej. /images?search=Leonardo'
+      error: 'Tienes que dar un parametro de busqueda. Ej. /dates?search=Leonardo'
     });
   }
   spinner.start();
@@ -124,7 +124,7 @@ app.get('/dates', function (req, res) {
 app.get('/artist', function (req, res) {
   if (!req.query.search) {
     return res.send({
-      error: 'Tienes que dar un parametro de busqueda. Ej. /images?search=Leonardo'
+      error: 'Tienes que dar un parametro de busqueda. Ej. /artist?search=Leonardo'
     });
   }
   spinner.start();
