@@ -4,7 +4,8 @@
   "description": "Given the name of a city, returns a string with the info of the current day",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "keywords": [
     "weather"
