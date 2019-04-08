@@ -3,6 +3,7 @@ const path = require('path')
 const express = require('express')
 
 const app = express()
+var port = process.env.PORT || 3000;
 const publicDir = path.join(__dirname, 'public')
 
 const chalk = require('chalk');
@@ -14,7 +15,7 @@ app.get('/students', function (req, res) {
   spinner.start();
   res.send(
     {
-      'error': 'Tienes que ingresar un ID válido. Ej. /studets/A00818997'
+      'error': 'Tienes que ingresar un ID válido. Ej. /students/A00818997'
     }
   );
   spinner.stop();
@@ -73,7 +74,7 @@ app.get('*', function (req, res) {
   });
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log(chalk.blue.bold('\n Listo para recibir peticiones\n'));
   console.log(chalk.green(' Ejemplo:\n http://localhost:3000/met?search=Leonardo'));
 });
