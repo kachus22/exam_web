@@ -23,21 +23,29 @@ app.get('/students', function (req, res) {
 
 app.get('/students/:id', function (req, res) {
   if (!req.params.id) {
+    spinner.stop();
     return res.send({
       error: 'Tienes que dar un id'
     });
   }
   spinner.start();
-  res.send(
+  if(req.params.id != 'A00818997'){
+    spinner.stop();
+    return res.send(
+      {
+        error: 'No encontramos a ese ID en nuestros datos'
+      }
+    );
+  }
+  spinner.stop();
+  return res.send(
     {
       "id": req.params.id,
       "fullname": "Enrique Gacia Torres",
       "nickname": "kachus",
       "age": 21
     }
-
   );
-  spinner.stop();
 });
 
 app.get('/met', function (req, res) {
